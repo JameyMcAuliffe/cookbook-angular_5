@@ -18,9 +18,19 @@ export class ServerService {
 
 	getRecipes() {
 		this.http.get('https://ng-cookbook-5c031.firebaseio.com/recipes.json')
-			.subscribe(
+			.map(
 				(response: Response) => {
 					const recipes: Recipe[] = response.json();
+					for(let recipe of recipes) {
+						if (!recipe['ingredients']) {
+							recipe['ingredients'] = [];
+						}
+					}
+					return recipes;
+				}
+			)
+			.subscribe(
+				(recipes: Recipe[]) => {
 					this.recipeService.setRecipes(recipes);
 				}
 			)
