@@ -14,14 +14,14 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 
   //undefined property to set as recipes array from service
 	recipes: Recipe[];
-  subscirption: Subscription;
+  subscription: Subscription;
 
   constructor(private recipeService: RecipeService,
   						private router: Router,
   						private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.subsciprtion = this.recipeService.recipesChanged
+    this.subscription = this.recipeService.recipesChanged
       .subscribe(
         (recipes: Recipe[]) => {
           this.recipes = recipes;
@@ -31,7 +31,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscirption.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   onNewRecipe() {
