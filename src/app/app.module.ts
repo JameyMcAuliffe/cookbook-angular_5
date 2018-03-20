@@ -16,6 +16,10 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './services/recipe.service';
 import { ServerService } from './services/server.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
+
 
 
 
@@ -29,7 +33,9 @@ import { ServerService } from './services/server.service';
     RecipesComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,7 @@ import { ServerService } from './services/server.service';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [RecipeService, ServerService],
+  providers: [RecipeService, ServerService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
