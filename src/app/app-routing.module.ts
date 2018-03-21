@@ -8,6 +8,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 const appRoutes: Routes = [
 	//pathMatch: only redirects if the full path is empty
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
 		{path: ':id', component: RecipeDetailComponent},
 		{path: ':id/edit', component: RecipeEditComponent}
 	]},
-	{path: 'signup', component: SignupComponent}
+	{path: 'signup', component: SignupComponent},
+	{path: 'signin', component: SigninComponent}
 ];
 
 @NgModule({
