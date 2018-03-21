@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 
 import { ServerService } from '../services/server.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import { ServerService } from '../services/server.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService,
+              private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -26,6 +28,10 @@ export class HeaderComponent implements OnInit {
 
   onFetchData() {
   	this.serverService.getRecipes();
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 
 }
