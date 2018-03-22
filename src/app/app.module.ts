@@ -14,6 +14,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesModule } from './recipes.module';
+import { SharedModule } from './shared.module';
 
 
 
@@ -30,7 +31,8 @@ import { RecipesModule } from './recipes.module';
     FormsModule,
     AppRoutingModule, 
     HttpModule,
-    RecipesModule
+    RecipesModule,
+    SharedModule
   ],
   providers: [RecipeService, ServerService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
