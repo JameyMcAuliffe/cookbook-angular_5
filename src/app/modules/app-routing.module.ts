@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RecipeListComponent } from '../recipe-list/recipe-list.component';
 import { RecipeItemComponent } from '../recipe-item/recipe-item.component';
-import { HomeComponent } from '../home/home.component';
+import { HomeComponent } from '../core/home/home.component';
 
 const appRoutes: Routes = [
 	{path: '', component: HomeComponent},

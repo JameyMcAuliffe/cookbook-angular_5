@@ -35,3 +35,10 @@
 		</ul>
 	</div>
 </div>
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let instruction of recipe.instructions; let i = index">{{i+1}}) {{instruction}}</li>
+		</ul>
+	</div>
+</div>

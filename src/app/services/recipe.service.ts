@@ -17,14 +17,14 @@ export class RecipeService {
 				new Ingredient('Fish', '1', 'pound'),
 				new Ingredient('Shrimp', '8', 'pieces')
 
-			]),
+			], ['cook da feesh', 'eat da feesh']),
 		new Recipe(
 			'Recipe 2', 
 			'forbidden donut', 
 			'https://vignette.wikia.nocookie.net/simpsons/images/c/c2/The_Devil_and_Homer_Simpson_21.JPG/revision/latest?cb=20130720154918',
 			[
 				new Ingredient('Donut', 'Just 1', 'Forbidden Donut')
-			])
+			], ['give 1 soul', 'get 1 donut'])
 	];
 
 	getRecipes() {
