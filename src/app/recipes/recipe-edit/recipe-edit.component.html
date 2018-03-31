@@ -45,7 +45,7 @@
 							type="text"
 							id="description"
 							class="form-control"
-							rows="6"
+							rows="4"
 							formControlName="description"></textarea>
 					</div>
 				</div>	
@@ -82,7 +82,26 @@
 							<button type="button" class="btn-success" (click)="onAddIngredient()">Add Ingredient</button>		
 						</div>
 					</div>
-				</div>	
+				</div>
+				<!-- start -->
+				<div class="row">
+					<div class="col-xs-12" formArrayName="instructions">
+						<div 
+							class="row"
+							*ngFor="let instructionCtrl of recipeForm.get('instructions').controls; let i = index"
+							[formGroupName]="i"
+							style="margin-top: 10px;">
+							<div class="col-xs-12">
+								<textarea 
+									class="form-control" 
+									type="text"
+									formControlName="instruction">
+								</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end -->
 			</div>
 		</form>
 	</div>
