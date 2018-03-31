@@ -28,6 +28,7 @@ export class RecipeEditComponent implements OnInit {
         this.initForm();
   		}
   	)
+    console.log(this.recipeForm);
   }
 
   private initForm() {
@@ -35,6 +36,7 @@ export class RecipeEditComponent implements OnInit {
     let recipeImagePath = '';
     let recipeDescription = '';
     let recipeIngredients = new FormArray([]);
+    let recipeInstructions = new FormArray([]);
 
     if (this.editMode) {
       const recipe = this.recipeService.getRecipe(this.id);
@@ -51,13 +53,23 @@ export class RecipeEditComponent implements OnInit {
           );
         }
       }
+      if (recipe['instructions']) {
+        for (let instruction of recipe.instructions) {
+          recipeInstructions.push(
+            new FormGroup({
+              'instruction': new FormControl(instruction)
+            })
+          )
+        }
+      }
     }
 
     this.recipeForm = new FormGroup({
       'name': new FormControl(recipeName, Validators.required),
       'imagePath': new FormControl(recipeImagePath, Validators.required),
       'description': new FormControl(recipeDescription, Validators.required),
-      'ingredients': recipeIngredients
+      'ingredients': recipeIngredients,
+      'instructions': recipeInstructions
     });
   }
 
