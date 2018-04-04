@@ -10,3 +10,8 @@ export class Ingredient {
 	// 	this.amount = amount;
 	// }
 }
+
+export class Instruction {
+	constructor(public instruction: string) {}
+}
+
