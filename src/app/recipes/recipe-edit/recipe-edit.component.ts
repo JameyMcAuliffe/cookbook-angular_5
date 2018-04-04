@@ -28,7 +28,6 @@ export class RecipeEditComponent implements OnInit {
         this.initForm();
   		}
   	)
-    console.log(this.recipeForm);
   }
 
   private initForm() {
@@ -54,10 +53,10 @@ export class RecipeEditComponent implements OnInit {
         }
       }
       if (recipe['instructions']) {
-        for (let instruction of recipe.instructions) {
+        for (let inst of recipe.instructions) {
           recipeInstructions.push(
             new FormGroup({
-              'instruction': new FormControl(instruction)
+              'instruction': new FormControl(inst.instruction)
             })
           )
         }
@@ -83,6 +82,7 @@ export class RecipeEditComponent implements OnInit {
     //recipeForm has the same form as recipe model
     if(this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value)
+      console.log(this.recipeForm.value);
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
