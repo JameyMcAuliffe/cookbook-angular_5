@@ -83,25 +83,28 @@
 						</div>
 					</div>
 				</div>
-				<!-- start -->
-				<div class="row">
-					<div class="col-xs-12" formArrayName="instructions">
-						<div 
-							class="row"
-							*ngFor="let instructionCtrl of recipeForm.get('instructions').controls; let i = index"
-							[formGroupName]="i"
-							style="margin-top: 10px;">
-							<div class="col-xs-12">
-								<textarea 
-									class="form-control" 
-									type="text"
-									formControlName="instruction">
-								</textarea>
-							</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12" formArrayName="instructions">
+					<div 
+						class="row"
+						*ngFor="let instructionCtrl of recipeForm.get('instructions').controls; let i = index"
+						[formGroupName]="i"
+						style="margin-top: 10px;">
+						<div class="col-xs-12">
+							<textarea 
+								class="form-control" 
+								type="text"
+								formControlName="instruction">
+							</textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<button type="button" class="btn-success" style="margin-top: 15px;" (click)="onAddInstruction()">Add Instruction</button>		
 						</div>
 					</div>
 				</div>
-				<!-- end -->
 			</div>
 		</form>
 	</div>
